@@ -10,12 +10,12 @@ setuptools-0.<x>.win32-py2.7.exe
 ```
 * Mechanize
 ```
+Proxyが必要な場合は、以下を先に入力
+> set https_proxy=あなたのproxy:ポート番号
 > c:\python27\scripts\easy_install.exe mechanize
 ```
 * BeautifulSoup4
 ```
-Proxyが必要な場合は、以下を先に入力
-> set https_proxy=あなたのproxy:ポート番号
 > c:\python27\scripts\easy_install.exe beautifulsoup4
 ```
 * imagesという名前のサブディレクトリを作成
