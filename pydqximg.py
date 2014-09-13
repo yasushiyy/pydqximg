@@ -91,7 +91,7 @@ def download_pics(b, ci, dr):
         for img in imgs:
             url = img['src'].replace('thum2', 'original')
             # use image id as a filename
-            name = '{0}.jpg'.format(url.split('/')[-2])
+            name = '{0}.jpg'.format(url.split('/')[-1])
             try:
                 open(os.path.join(dr, name), 'r')
                 print('File {0} already exists.'.format(name))
