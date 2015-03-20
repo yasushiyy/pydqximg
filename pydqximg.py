@@ -3,6 +3,7 @@
 # ドラクエ10の冒険者の広場画像の一括ダウンロード
 #
 
+import getpass
 import os
 import re
 import sys
@@ -14,7 +15,6 @@ def do_login(b, us, pw, ci):
     # ログイン画面
     r = b.open('http://hiroba.dqx.jp/sc/login')
     print(b.geturl())
-    print(b.title())
     b.select_form(name='mainForm')
     for f in b.form.controls:
         f.readonly = False
@@ -25,13 +25,11 @@ def do_login(b, us, pw, ci):
     b.submit()
     # 中間画面
     print(b.geturl())
-    print(b.title())
     b.select_form(name='mainForm')
     b.submit()
     # キャラクターセレクト
     r = b.open('http://hiroba.dqx.jp/sc/login/characterselect/')
     print(b.geturl())
-    print(b.title())
     b.select_form(nr=0)
     for f in b.form.controls:
         f.readonly = False
@@ -53,7 +51,7 @@ def get_browser(filename, proxy=None):
     dr = f.readline().strip()
     f.close()
     # ask for password
-    pw = raw_input('Password? ')
+    pw = getpass.getpass()
     # setup browser
     b = mechanize.Browser()
     cj = cookielib.LWPCookieJar()
