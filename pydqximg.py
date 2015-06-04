@@ -21,6 +21,8 @@ def do_login(b, us, pw, ci):
     b.form['_pr_confData_sqexid'] = us
     b.form['_pr_confData_passwd'] = pw
     b.form['_pr_confData_otppw'] = ''
+    if len(sys.argv) > 2:
+        b.form['_pr_confData_otppw'] = sys.argv[2]
     b.form['_event'] = 'Submit'
     b.submit()
     # 中間画面
@@ -99,8 +101,6 @@ def download_pics(b, ci, dr):
 
 if __name__ == '__main__':
     proxy = None
-    if len(sys.argv) > 2:
-        proxy = sys.argv[2]
     if len(sys.argv) > 1:
         filename = sys.argv[1]
         (b, ci, dr) = get_browser(filename, proxy)

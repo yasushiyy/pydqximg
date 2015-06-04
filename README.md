@@ -37,7 +37,7 @@ images
 
 ### 実行
 ```
-> c:\python27\python.exe pydqximg.py <上記ファイル名> <proxy名(あれば)>
+> c:\python27\python.exe pydqximg.py <上記ファイル名> <ワンタイムパス(あれば)>
 ```
 * パスワードを聞かれたら入れます。
 * 同じ名前のファイルが存在する場合、そのファイルはスキップします。
